@@ -22,7 +22,7 @@ class FishingUtils(module.Module):
 
     @command.desc("Stop Fishing!")
     async def cmd_stopfish(self, ctx: command.Context):
-        if self.running == true:
+        if self.running == True:
             self.running = False
             await ctx.respond("`-> Fishing stopped!`")
         else:
