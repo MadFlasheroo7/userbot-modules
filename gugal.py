@@ -21,11 +21,11 @@ class gugalUtils(module.Module):
         await asyncio.sleep(1)
         search_args = (query,1)
         gsearch = GoogleSearch()
-        gresults = gsearch.search(*search_args)
+        gresults = GoogleSearch().search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
             # pprint.pprint(f"-------------{k}------------")
             for result in v:
                 # pprint.pprint(result)
-                ctx.respond(result) 
+                await ctx.respond(result) 
