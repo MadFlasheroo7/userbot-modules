@@ -24,11 +24,11 @@ class gugalUtils(module.Module):
         gsearch = GoogleSearch()
         gresults = await gsearch.async_search(*search_args)
         a = {"Google": gresults}
-
+        msgId = ctx.msg.chat_id
         # await ctx.respond(gresults)
 
         for k, v in a.items():
             for result in v:
                 await ctx.respond(f"-------------{k}------------")
                 pprint.pprint(result)
-                await ctx.respond(result)
+                await self.bot.client.send_message(msgId,result)
