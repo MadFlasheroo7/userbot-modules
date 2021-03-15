@@ -16,9 +16,10 @@ class gugalUtils(module.Module):
     @command.usage("Requiers a query to search for")
     async def cmd_google(self, ctx: command.Context):
         query = ctx.input
+        await ctx.respond("Searching...")
         search_args = (query,1)
         gsearch = GoogleSearch()
-        gresults = gsearch.search(*search_args)
+        await gresults = gsearch.search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
