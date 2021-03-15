@@ -28,5 +28,5 @@ class gugalUtils(module.Module):
         for k, v in a.items():
             await ctx.respond(f"-------------{k}------------")
             for result in v:
-                # pprint.pprint(result)
-                await ctx.respond(result) 
+                pprint.pprint(result)
+                # await ctx.respond(result) 
