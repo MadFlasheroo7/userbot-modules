@@ -1,5 +1,6 @@
 # userbot-modules
-    These modules are made for pyrobud self bot by [I'm an inline-style link](https://www.google.com)
+
+These modules are made for pyrobud self bot by [kdrag0n/pyrobud](https://github.com/kdrag0n/pyrobud)
 
 ## Installation 
 Clone
