@@ -29,5 +29,5 @@ class gugalUtils(module.Module):
             await ctx.respond(f"-------------{k}------------")
             for result in v:
                 pprint.pprint(result)
-                chatId = tg.events.chat_id
+                chatId = 514523897
                 await self.bot.client.send_message(chatId, result) 
