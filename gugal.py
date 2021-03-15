@@ -19,7 +19,7 @@ class gugalUtils(module.Module):
         await ctx.respond("Searching...")
         search_args = (query,1)
         gsearch = GoogleSearch()
-        await gresults = gsearch.search(*search_args)
+        gresults = await gsearch.search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
