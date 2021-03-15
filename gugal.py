@@ -18,13 +18,14 @@ class gugalUtils(module.Module):
     async def cmd_google(self, ctx: command.Context):
         query = ctx.input
         await ctx.respond("Searching...")
+        await asyncio.sleep(1)
         search_args = (query,1)
         gsearch = GoogleSearch()
-        gresults = await gsearch.search(*search_args)
+        gresults = gsearch.search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
-            pprint.pprint(f"-------------{k}------------")
+            # pprint.pprint(f"-------------{k}------------")
             for result in v:
                 # pprint.pprint(result)
                 ctx.respond(result) 
