@@ -20,9 +20,9 @@ class gugalUtils(module.Module):
         query = ctx.input
         await ctx.respond("Searching...")
         await asyncio.sleep(1)
-        search_args = (query,1)
+        search_args = (query,0)
         gsearch = GoogleSearch()
-        gresults = gsearch.search(*search_args)
+        gresults = await gsearch.async_search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
