@@ -26,8 +26,7 @@ class gugalUtils(module.Module):
         a = {"Google": gresults}
 
         for k, v in a.items():
-            await ctx.respond(f"-------------{k}------------")
             for result in v:
+                await ctx.respond(f"-------------{k}------------")
                 pprint.pprint(result)
-                chatId = 514523897
-                await self.bot.client.send_message(chatId, result) 
+                await ctx.respond(result) 
