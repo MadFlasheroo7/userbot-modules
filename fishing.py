@@ -26,7 +26,7 @@ class FishingUtils(module.Module):
             self.running = False
             await ctx.respond("`-> Fishing stopped!`")
         else:
-            await ctx.respond("`You are not fishing currently`\n do it by 'startfish'")
+            await ctx.respond("`You are not fishing currently`\ndo it by 'startfish'")
 
     async def on_message(self, event: tg.events.NewMessage.Event) -> None:
         if event.is_group and str(event.chat_id) == str(fishing_chat):

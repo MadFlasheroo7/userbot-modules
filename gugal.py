@@ -11,13 +11,14 @@ from .. import command, module
 class gugalUtils(module.Module):
     name = "Gugal"
     disabled = False
+    running = False
 
     @command.desc("Gives a google search result")
     @command.usage("Requiers a query to search for")
     async def cmd_google(self, ctx: command.Context):
         query = ctx.input
         await ctx.respond("Searching...")
-        search_args = (query,1)
+        search_args = await (query,1)
         gsearch = GoogleSearch()
         gresults = await gsearch.search(*search_args)
         a = {"Google": gresults}
@@ -25,4 +26,5 @@ class gugalUtils(module.Module):
         for k, v in a.items():
             pprint.pprint(f"-------------{k}------------")
             for result in v:
-                pprint.pprint(result) 
+                # pprint.pprint(result)
+                ctx.respond(result) 
