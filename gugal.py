@@ -29,4 +29,7 @@ class gugalUtils(module.Module):
             for result in v:
                 await ctx.respond(f"-------------{k}------------")
                 pprint.pprint(result)
-                await ctx.respond(result) 
+                # await ctx.respond(result)
+                await ctx.respond(result["titles"][1])
+                await ctx.respond(result["links"][1])
+                await ctx.respond(result["descriptions"][1])
