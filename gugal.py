@@ -29,4 +29,4 @@ class gugalUtils(module.Module):
             await ctx.respond(f"-------------{k}------------")
             for result in v:
                 pprint.pprint(result)
-                # await ctx.respond(result) 
+                await ctx.respond(result) 
