@@ -25,13 +25,10 @@ class gugalUtils(module.Module):
         gresults = await gsearch.async_search(*search_args)
         a = {"Google": gresults}
 
-        await ctx.respond(gresults)
+        # await ctx.respond(gresults)
 
-        # for k, v in a.items():
-        #     for result in v:
-        #         await ctx.respond(f"-------------{k}------------")
-        #         pprint.pprint(result)
-        #         # await ctx.respond(result)
-        #         await ctx.respond(result["titles"][1])
-        #         await ctx.respond(result["links"][1])
-        #         await ctx.respond(result["descriptions"][1])
+        for k, v in a.items():
+            for result in v:
+                await ctx.respond(f"-------------{k}------------")
+                pprint.pprint(result)
+                await ctx.respond(result)
