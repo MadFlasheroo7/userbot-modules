@@ -1,3 +1,6 @@
+wheel
+lxml
+beautifulsoup4
 wikipedia
 google_images_download
 search-engine-parser

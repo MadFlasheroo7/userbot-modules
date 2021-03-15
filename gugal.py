@@ -3,7 +3,7 @@ import os
 import pprint
 
 import google_images_download as gimg
-from search_engine_parser.core.engines.google import Search as gSearch 
+from search_engine_parser.core.engines.google import Search as GoogleSearch 
 import telethon as tg
 
 from .. import command, module
@@ -17,7 +17,8 @@ class gugalUtils(module.Module):
     async def cmd_google(self, ctx: command.Context):
         query = ctx.input
         search_args = (query,1)
-        gresults = gSearch.search(*search_args)
+        gsearch = GoogleSearch()
+        gresults = gsearch.search(*search_args)
         a = {"Google": gresults}
 
         for k, v in a.items():
