@@ -10,7 +10,7 @@ from .. import command, module
 
 class gugalUtils(module.Module):
     name = "Gugal"
-    disabled = True
+    disabled = False
     running = False
 
     @command.desc("Gives a google search result")
