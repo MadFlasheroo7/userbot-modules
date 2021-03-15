@@ -3,3 +3,6 @@
 !.gitignore
 example.py
 !fishing.py
+!wikipedia.py
+!gugal.py
+!pmpermit.py
