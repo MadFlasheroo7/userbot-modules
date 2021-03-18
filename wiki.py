@@ -18,7 +18,7 @@ class WikiUtils(module.Module):
         # await asyncio.sleep(1)
 
         try:
-            wiki.summary(query)
+            wiki.summary(query, sentences = 3)
         except DisambiguationError as error:
             await ctx.respond("Disambiguated page not found.\n\n{error}")
             return
