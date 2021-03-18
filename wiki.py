@@ -14,7 +14,7 @@ class WikiUtils(module.Module):
     async def cmd_wiki(self, ctx: command.Context):
         query = ctx.input
 
-        await ctx.respond("Searching...")
+        # await ctx.respond("Searching...")
         await asyncio.sleep(1)
 
         # try:
