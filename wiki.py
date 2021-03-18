@@ -27,4 +27,4 @@ class WikiUtils(module.Module):
         
         # result = pprint.pprint(wiki.summary(query, sentences = 3))
         result = wiki.summary(query, sentences = 3)
-        await ctx.respond(result)
+        await ctx.respond("```" +result+ "```")
