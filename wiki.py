@@ -25,5 +25,6 @@ class WikiUtils(module.Module):
         # except PageError as pageerror:
         #     await ctx.respond("Page Not Found.\n\n{pageerror}")
         
-        result = pprint.pprint(wiki.summary(query, sentences = 3))
+        # result = pprint.pprint(wiki.summary(query, sentences = 3))
+        result = wiki.summary(query, sentences = 3)
         await ctx.respond(result)
