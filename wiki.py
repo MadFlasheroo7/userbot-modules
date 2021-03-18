@@ -2,6 +2,7 @@ import asyncio
 import pprint
 
 import wikipedia as wiki
+from wikipedia.exceptions import DisambiguationError, PageError
 import telethon as tg
 
 from .. import command, module
