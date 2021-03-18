@@ -14,8 +14,8 @@ class WikiUtils(module.Module):
     async def cmd_wiki(self, ctx: command.Context):
         query = ctx.input
 
-        # await ctx.respond("Searching...")
-        await asyncio.sleep(1)
+        await ctx.respond("Searching...")
+        # await asyncio.sleep(1)
 
         # try:
         #     wiki.summary(query, sentences = 3)
@@ -27,4 +27,4 @@ class WikiUtils(module.Module):
         
         # result = pprint.pprint(wiki.summary(query, sentences = 3))
         result = wiki.summary(query, sentences = 3)
-        await ctx.respond("```" +result+ "```")
+        await ctx.respond("```"+result+"```")
