@@ -21,10 +21,9 @@ class WikiUtils(module.Module):
         try:
             wiki.summary(query, sentences = 3)
         except DisambiguationError as error:
-            await ctx.respond("Disambiguated page not found...")
-            return
+            await ctx.respond("Disambiguated page not found....\n\n{error}")
         except PageError as pageerror:
-            await ctx.respond("Page Not Found...")
+            await ctx.respond("Page Not Found....\n\n{pageerror}")
         
         # result = pprint.pprint(wiki.summary(query, sentences = 3))
         result = wiki.summary(query, sentences = 3)
