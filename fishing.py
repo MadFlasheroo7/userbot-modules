@@ -14,8 +14,12 @@ class FishingUtils(module.Module):
 
     @command.desc("Start Fishing!")
     async def cmd_startfish(self, ctx: command.Context):
-        self.running = True
+        if self.running == True:
+            await ctx.respond("!!You are already fishing!!")
+        else:
+            self.running = True
         await ctx.respond("`-> Fishing Started!`")
+        
         while self.running:
             await self.bot.client.send_message(fishing_chat, "/fish@CalsiBot")
             await asyncio.sleep(1)

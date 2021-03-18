@@ -1,9 +1,9 @@
 *
 !__init__.py
 !.gitignore
-example.py
+!example.py
 !fishing.py
-!wikipedia.py
+!wiki.py
 !gugal.py
 !pmpermit.py
 !requirements.txt

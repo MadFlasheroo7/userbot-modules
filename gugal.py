@@ -11,12 +11,10 @@ from .. import command, module
 class gugalUtils(module.Module):
     name = "Gugal"
     disabled = False
-    running = False
 
     @command.desc("Gives a google search result")
     @command.usage("Requiers a query to search for")
     async def cmd_google(self, ctx: command.Context):
-        running = True
         query = ctx.input
         await ctx.respond("Searching...")
         # await asyncio.sleep(1)
@@ -25,10 +23,11 @@ class gugalUtils(module.Module):
         gresults = await gsearch.async_search(*search_args)
         a = {"Google": gresults}
         msgId = ctx.msg.chat_id
-        # await ctx.respond(gresults)
 
         for k, v in a.items():
             for result in v:
                 await ctx.respond(f"-------------{k}------------")
-                pprint.pprint(result)
-                await self.bot.client.send_message(msgId,result)
+                await asyncio.sleep(1)
+                final_result = pprint.pprint(result)
+                await ctx.respond(final_result)
+                # await self.bot.client.send_message(msgId,result)

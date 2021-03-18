@@ -13,7 +13,7 @@ Use pip package manager to install
 pip install -r requirements.txt
 ```
 
-if the installation failes run **for debian based distro** and for **Termux** 
+if the installation failes run **for debian based distro** and for **Termux** run the following commands
 ```bash
 apt-get install libxml2 libxslt
 ```
