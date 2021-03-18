@@ -29,5 +29,5 @@ class gugalUtils(module.Module):
                 await ctx.respond(f"-------------{k}------------")
                 await asyncio.sleep(1)
                 final_result = pprint.pprint(result)
-                await ctx.respond(final_result)
-                # await self.bot.client.send_message(msgId,result)
+                # await ctx.respond(final_result)
+                await self.bot.client.send_message(msgId,final_result)

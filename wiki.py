@@ -17,13 +17,13 @@ class WikiUtils(module.Module):
         await ctx.respond("Searching...")
         await asyncio.sleep(1)
 
-        try:
-            wiki.summary(query, sentences = 3)
-        except DisambiguationError as error:
-            await ctx.respond("Disambiguated page not found.\n\n{error}")
-            return
-        except PageError as pageerror:
-            await ctx.respond("Page Not Found.\n\n{pageerror}")
+        # try:
+        #     wiki.summary(query, sentences = 3)
+        # except DisambiguationError as error:
+        #     await ctx.respond("Disambiguated page not found.\n\n{error}")
+        #     return
+        # except PageError as pageerror:
+        #     await ctx.respond("Page Not Found.\n\n{pageerror}")
         
         result = pprint.pprint(wiki.summary(query, sentences = 3))
         await ctx.respond(result)
