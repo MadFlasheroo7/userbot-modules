@@ -4,7 +4,7 @@ import telethon as tg
 
 from .. import command, module
 
-fishing_chat = -1001463155229
+fishing_chat = 259643624 ##-1001463155229
 
 
 class FishingUtils(module.Module):
