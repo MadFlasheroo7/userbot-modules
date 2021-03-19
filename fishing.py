@@ -18,7 +18,7 @@ class FishingUtils(module.Module):
             await ctx.respond("!!You are already fishing!!")
         else:
             self.running = True
-        await ctx.respond("`-> Fishing Started!`")
+            await ctx.respond("`-> Fishing Started!`")
         
         while self.running:
             await self.bot.client.send_message(fishing_chat, "/fish@CalsiBot")
@@ -34,6 +34,4 @@ class FishingUtils(module.Module):
 
     async def on_message(self, event: tg.events.NewMessage.Event) -> None:
         if event.is_group and str(event.chat_id) == str(fishing_chat):
-            await self.bot.client.send_read_acknowledge(
-                event.chat, event.message, clear_mentions=True
-            )
+            await self.bot.client.send_read_acknowledge(event.chat, event.message, clear_mentions=True)
