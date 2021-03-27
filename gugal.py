@@ -24,7 +24,7 @@ class gugalUtils(module.Module):
         # a = {"Google": gresults}
         # msgId = ctx.msg.chat_id
         msg = ""
-        for i in range(10):
+        for i in range(5):
             try:
                 title = gresults["titles"][i]
                 link = gresults["links"][i]
