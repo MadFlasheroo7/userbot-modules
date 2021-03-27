@@ -23,6 +23,7 @@ class gugalUtils(module.Module):
         gresults = await gsearch.async_search(*search_args)
         # a = {"Google": gresults}
         # msgId = ctx.msg.chat_id
+        msg = ""
         for i in range(10):
             try:
                 title = gresults["titles"][i]
