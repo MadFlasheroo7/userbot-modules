@@ -31,5 +31,5 @@ class gugalUtils(module.Module):
                 msg += f"[{title}]({link})\n`{desc}`\n\n"
             except IndexError:
                 break
-        result = "**Query :**\n" + query + "\n\n**Result :**\n" + msg, link_preview = False
+        result = ("**Query :**\n" + query + "\n\n**Result :**\n" + msg, link_preview = False)
         await ctx.respond(result)
