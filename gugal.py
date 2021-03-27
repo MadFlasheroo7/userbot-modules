@@ -21,13 +21,15 @@ class gugalUtils(module.Module):
         search_args = (query,0)
         gsearch = GoogleSearch()
         gresults = await gsearch.async_search(*search_args)
-        a = {"Google": gresults}
-        msgId = ctx.msg.chat_id
-
-        for k, v in a.items():
-            for result in v:
-                await ctx.respond(f"-------------{k}------------")
-                await asyncio.sleep(1)
-                final_result = pprint.pprint(result)
-                # await ctx.respond(final_result)
-                await self.bot.client.send_message(msgId,final_result)
+        # a = {"Google": gresults}
+        # msgId = ctx.msg.chat_id
+        for i in range(10):
+            try:
+                title = gresults["titles"][i]
+                link = gresults["links"][i]
+                desc = gresults["descriptions"][i]
+                msg += f"[{title}]({link})\n`{desc}`\n\n"
+            except IndexError:
+                break
+        result = "**Query :**\n" + query + "\n\n**Result :**\n" + msg, link_preview = False
+        await ctx.respond(result)
